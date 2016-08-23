@@ -14,17 +14,61 @@
   </div>
 </div>
 <div class="container" id="view-current-orders" style="display: none;">
+  <div><a class="btn btn-sm btn-default close" href="#" role="button" style="float: left; margin: 0.25em;">&laquo; Return</a></div>
   <table class="table table-striped" id="current-orders">
     <thead>
+      <th>ID</th>
       <th>Name</th>
       <th>Description</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
     </thead>
     <tbody>
     </tbody>
   </table>
+  <div><a class="btn btn-sm btn-default close" href="#" role="button" style="float: left; margin: 0.25em;">&laquo; Return</a></div>
 </div>
 
-<div style="margin: auto; text-align: center;">
-  <span class="o active"></span><span class="o"></span><span class="o"></span>
+<div class="container" id="edit-current-order" style="display: none;">
+  <div class="row"><p class="bg-warning" style="padding: 1em;">Due to restrictions in the API, editing of the id, name, and description of the pizza is disabled at the moment. Also toppings can only be added but not removed.</p></div>
+  <div class="row">
+    <form id="current-order">
+      <div class="form-group row">
+        <label for="pid" class="col-xs-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="pid" name="pid" placeholder="ID" readonly="readonly" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="pname" class="col-xs-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="pname" name="pname" placeholder="Name" readonly="readonly" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="pdesc" class="col-xs-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="pdesc" name="pdesc" placeholder="Description" readonly="readonly" style="resize: none;"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="ptoppings" class="col-xs-2 col-form-label">Toppings</label>
+        <div class="col-sm-10">
+          <select class="form-control pizza-toppings-select" id="ptoppings" name="ptoppings" placeholder="Toppings" multiple="multiple" style="width: 100%;"></select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <button type="button" class="btn btn-success btn-sm">Save</button>
+          <button type="button" class="btn btn-default btn-sm cancel">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
+
+<!-- <div style="margin: auto; text-align: center;">
+  <span class="o active"></span><span class="o"></span><span class="o"></span>
+</div> -->
 {% endblock %}
