@@ -1,16 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container" id="start">
   <div class="header clearfix">
     <h3 class="text-muted"><i class="fa fa-cutlery"></i>&nbsp;Tanga Pizza</h3>
   </div>
 
   <div class="jumbotron">
     <h1 class="display-3">Welcome to Tanga Pizza!</h1>
-    <p class="lead">We aim to customize your pizza creation needs. let's begin your journey to become the next top <span style="text-transform: uppercase;">Pizza Artist&reg;</span>!</p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+    <p class="lead">We aim to give you the best experience in pizza creation! let's begin your journey to become the next top <span style="text-transform: uppercase;">Pizza Artist&reg;</span>!</p>
+    <p class="row" style="text-align: right;"><span class="col col-xs-6"><a class="btn btn-lg btn-default" href="#" role="button">view current orders</a></span><span class="col col-xs-6"><a class="btn btn-lg btn-success" href="#" role="button">Let's go! &raquo;</a></span></p>
+  </div>
+  <div style="margin: auto; text-align: center;">
+    <span class="o active"></span><span class="o"></span><span class="o"></span>
   </div>
 </div>
-
 {% endblock %}
