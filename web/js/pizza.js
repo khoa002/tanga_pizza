@@ -1,5 +1,6 @@
 $(function() {
-    $('div#start').on('click', 'a#view-current-orders', function() {
+    $('div#start').on('click', 'a#view-current-orders', function(e) {
+        e.preventDefault();
         $.ajax({
             url: "https://pizzaserver.herokuapp.com/pizzas",
             method: "GET",
@@ -22,9 +23,3 @@ $(function() {
         });
     });
 });
-
-function removeScriptTags(code) {
-    var result = $(code);
-    result.find('script').remove();
-    return result.html();
-}
