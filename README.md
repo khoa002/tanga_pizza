@@ -1,2 +1,2 @@
 # tanga_pizza
-Tanga Pizza Server
+Tanga Pizza Client
