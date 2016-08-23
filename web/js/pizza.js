@@ -7,7 +7,7 @@ $(function() {
             contentType: "application/json"
         }).done(function(r) {
             $.ajax({
-                url: "actions/sanitize_json.php",
+                url: "actions/sanitize_pizza_json.php",
                 method: "POST",
                 data: {
                     json: r
