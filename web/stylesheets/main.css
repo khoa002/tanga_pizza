@@ -1,6 +1,9 @@
 *, body {
-  font-family: 'Poiret One', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   text-transform: lowercase;
+}
+body {
+  padding: 1em;
 }
 .o {
   border: 1px solid #CCC;
