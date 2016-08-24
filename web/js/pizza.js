@@ -73,8 +73,9 @@ $(function() {
         });
     });
 
-    $('div#edit-current-order').on('click', 'a#pnewtopping-add', function(e) {
+    $('div#edit-current-order').on('click', 'button#pnewtopping-add', function(e) {
         e.preventDefault();
+        var $button = $(this);
         var $form = $('form#current-order', 'div#edit-current-order');
         var $newTopping = $('input#pnewtopping', $form);
         var $formGroup = $newTopping.closest('.form-group');
@@ -87,6 +88,7 @@ $(function() {
             return false;
         }
 
+        $button.prop('disabled', true);
         $.ajax({
             url: "https://pizzaserver.herokuapp.com/toppings",
             method: "POST",
@@ -111,6 +113,7 @@ $(function() {
             }).done(function() {
                 refreshCurrentOrders(function() {
                     // $('div#edit-current-order a.cancel').click(); // simulate closing this window
+                    $button.prop('disabled', false);
                     $('div#view-current-orders button.edit-pizza[data-pid="' + pid + '"]').click(); // simulate click on the edit button again
                 });
             });
@@ -132,8 +135,9 @@ $(function() {
         $('div#start').slideDown();
     });
 
-    $('div#start-new-order').on('click', 'a#save-this-pizza', function(e) {
+    $('div#start-new-order').on('click', 'button#save-this-pizza', function(e) {
         e.preventDefault();
+        var $button = $(this);
         var $form = $('div#start-new-order form#new-order');
         var $name = $('input#pname', $form);
         var $desc = $('textarea#pdesc', $form);
@@ -151,6 +155,7 @@ $(function() {
             $desc.val('');
             return false;
         }
+        $button.prop('disabled', true);
         $.ajax({
             url: 'https://pizzaserver.herokuapp.com/pizzas',
             method: 'POST',
@@ -167,6 +172,7 @@ $(function() {
                 pdesc: desc
             };
             showEditPizzaForm(pid, kvpairs, function(response) {
+                $button.prop('disabled', false);
                 $('div#start-new-order').slideUp();
                 $('div#edit-current-order').slideDown();
             });
