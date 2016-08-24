@@ -2,15 +2,40 @@
 
 {% block content %}
 <div class="container" id="start">
-  <div class="header clearfix">
-    <h3 class="text-muted"><i class="fa fa-cutlery"></i>&nbsp;Tanga Pizza</h3>
-  </div>
-
   <div class="jumbotron">
     <h1 class="display-3">Welcome to Tanga Pizza!</h1>
     <p class="lead">We aim to give you the best experience in pizza creation! let's begin your journey to become the next top <span style="text-transform: uppercase;">Pizza Artist&reg;</span>!</p>
-    <p style="text-align: center;"><a class="btn btn-lg btn-success" href="#" role="button">Let's go! &raquo;</a></p>
+    <p style="text-align: center;"><a class="btn btn-lg btn-success" href="#" role="button" id="lets-go">Let's go! &raquo;</a></p>
     <p style="text-align: center;"><a href="#" id="view-current-orders">View current orders</a></p>
+  </div>
+</div>
+<div class="container" id="start-new-order" style="display: none;">
+  <div class="jumbotron">
+    <h3>let's start by giving your creation a name and a brief description!</h3>
+    <div class="row" style="margin-top: 1.5em;">
+      <form id="new-order">
+        <div class="form-group row">
+          <label for="pname" class="col-xs-2 col-form-label">pizza name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="pname" name="pname" placeholder="Name" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pdesc" class="col-xs-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="pdesc" name="pdesc" placeholder="Description" style="resize: none;"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <p style="text-align: left;"><a class="btn btn-sm btn-default close" href="#" role="button" style="float: left; margin: 0.25em;">&laquo; Return</a></p>
+          </div>
+          <div class="col-sm-6">
+            <p style="text-align: right;"><a class="btn btn-lg btn-success" href="#" role="button" id="save-this-pizza">Save it! &raquo;</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 <div class="container" id="view-current-orders" style="display: none;">
@@ -52,7 +77,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="ptoppings" class="col-xs-2 col-form-label">Toppings</label>
+        <label for="ptoppings" class="col-xs-2 col-form-label">Toppings&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Click into the box on the right to select or search for available toppings"></i></label>
         <div class="col-sm-10">
           <select class="form-control pizza-toppings-select" id="ptoppings" name="ptoppings" placeholder="Toppings" multiple="multiple" style="width: 100%;"></select>
         </div>
@@ -72,8 +97,4 @@
     </form>
   </div>
 </div>
-
-<!-- <div style="margin: auto; text-align: center;">
-  <span class="o active"></span><span class="o"></span><span class="o"></span>
-</div> -->
 {% endblock %}
