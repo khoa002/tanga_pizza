@@ -1,4 +1,4 @@
-*, body {
+*, body, button, input, select {
   font-family: 'Comfortaa', sans-serif;
   text-transform: lowercase;
 }
